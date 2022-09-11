@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Daily Gratitude List</string>
+
+    <string name="gratitude_list_title">Daily Gratitudes</string>
 </resources>

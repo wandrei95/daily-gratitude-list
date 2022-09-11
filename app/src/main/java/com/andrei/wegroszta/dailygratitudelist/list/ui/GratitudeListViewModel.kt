@@ -43,6 +43,12 @@ class GratitudeListViewModel @Inject constructor(
         }
     }
 
+    fun refreshData() {
+        launchWithErrorHandling {
+            loadGratitudes()
+        }
+    }
+
     private suspend fun loadGratitudes() {
         _gratitudeListUiState.update { uiState -> uiState.copy(isLoading = true) }
         repository.loadGratitudes()
