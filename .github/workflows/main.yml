@@ -9,6 +9,6 @@ jobs:
     steps:
       - name: print body
         env:
-          BODY: ${{ github.event.comment.body }}
-        if: ${{ github.event.comment.body == 'jenkins rebuild'}}
-        run: echo "$BODY"
+          Comment: ${{ github.event.comment.body }}
+        if: ${{ Comment == 'jenkins rebuild'}}
+        run: echo "$Comment"
