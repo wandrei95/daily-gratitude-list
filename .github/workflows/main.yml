@@ -7,17 +7,7 @@ jobs:
     if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.event.comment.body }}
+      - name: print body
         env:
-          NUMBER: ${{ github.event.issue.number }}
-
-  issue_commented:
-    # This job only runs for issue comments
-    name: Issue comment
-    if: ${{ !github.event.issue.pull_request }}
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          echo A comment on issue $NUMBER
-        env:
-          NUMBER: ${{ github.event.issue.number }}
+          BODY: ${{ github.event.comment.body }}
+        run: echo "$BODY"
