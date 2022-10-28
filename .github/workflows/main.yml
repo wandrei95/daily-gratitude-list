@@ -6,9 +6,10 @@ jobs:
     name: PR comment
     if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
+    env:
+      Comment: ${{ github.event.comment.body }}
     steps:
+      - run: echo "should trigger something"
       - name: print body
-        env:
-          Comment: ${{ github.event.comment.body }}
         if: ${{ env.Comment == 'jenkins rebuild'}}
         run: echo "should trigger something"
