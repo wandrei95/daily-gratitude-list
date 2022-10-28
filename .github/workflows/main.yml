@@ -1,11 +1,10 @@
-on: issue_comment
-jobs: 
-  pr_commented:
-    name: PR comment
-    if: ${{ github.event.issue.pull_request }}
+on:
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  approved:
+    if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo A comment on PR $NUMBER
-        env:
-          NUMBER: ${{ github.event.issue.number }}
+      - run: echo "This PR was approved"
