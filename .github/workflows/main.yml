@@ -11,4 +11,4 @@ jobs:
         env:
           Comment: ${{ github.event.comment.body }}
         if: ${{ env.Comment == 'jenkins rebuild'}}
-        run: echo "$Comment"
+        run: echo "should trigger something"
