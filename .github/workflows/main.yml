@@ -10,5 +10,5 @@ jobs:
       - name: print body
         env:
           BODY: ${{ github.event.comment.body }}
-        if: $BODY == 'deploy'
+        if: ${{ github.event.comment.body == 'jenkins rebuild'}}
         run: echo "$BODY"
