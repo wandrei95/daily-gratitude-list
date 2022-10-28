@@ -9,7 +9,7 @@ jobs:
     env:
       Comment: ${{ github.event.comment.body }}
     steps:
-      - run: echo "should trigger something"
+      - run: echo "comment - $Comment"
       - name: print body
         if: ${{ env.Comment == 'jenkins rebuild'}}
         run: echo "should trigger something"
