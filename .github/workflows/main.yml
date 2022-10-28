@@ -10,4 +10,5 @@ jobs:
       - name: print body
         env:
           BODY: ${{ github.event.comment.body }}
+        if: $BODY == 'deploy'
         run: echo "$BODY"
