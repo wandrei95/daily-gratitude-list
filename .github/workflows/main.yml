@@ -10,5 +10,5 @@ jobs:
       - name: print body
         env:
           Comment: ${{ github.event.comment.body }}
-        if: ${{ Comment == 'jenkins rebuild'}}
+        if: ${{ env.Comment == 'jenkins rebuild'}}
         run: echo "$Comment"
