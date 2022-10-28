@@ -1,9 +1,8 @@
 on: issue_comment
 
 jobs:
-  pr_commented:
-    # This job only runs for pull request comments
-    name: PR comment
+  pr_comment_rebuild:
+    name: PR comment rebuild
     if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     env:
