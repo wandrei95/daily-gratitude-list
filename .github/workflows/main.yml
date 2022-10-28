@@ -7,8 +7,7 @@ jobs:
     if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo A comment on PR $NUMBER
+      - run: echo ${{ github.event.comment.body }}
         env:
           NUMBER: ${{ github.event.issue.number }}
 
