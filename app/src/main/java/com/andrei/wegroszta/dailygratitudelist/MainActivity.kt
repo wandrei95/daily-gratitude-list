@@ -15,6 +15,11 @@ class MainActivity : AppCompatActivity() {
         setContent {
             DailyGratitudeListTheme {
                 Navigation()
+
+
+
+
+
             }
         }
     }
